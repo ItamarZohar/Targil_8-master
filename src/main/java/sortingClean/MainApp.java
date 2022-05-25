@@ -32,6 +32,9 @@ public class MainApp {
     public @Named("Rc")  SortingAlgorithm<Integer> GetRandomSort(){
         return makeRandomSortingAlgorithm();
     }
+
+    @Produces
+    public @Size int GetSize(){return 10000;}
     private static SortingAlgorithm<Integer> makeRandomSortingAlgorithm(){
         Random random = new Random(System.currentTimeMillis());
         SortingAlgorithm<Integer> sortAlg= null;

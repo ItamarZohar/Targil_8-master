@@ -23,8 +23,9 @@ public class AlgorithmRunner {
    SortingAlgorithm<Integer> randomAlgorithm2;
 
 
-
-    int numberOfElements = 10000;
+    @Inject
+    @Size
+    int numberOfElements;
     public void runAlgorithms(){
         Random rand = new Random();
         Integer[] ints = rand.ints(1,Integer.MAX_VALUE)
