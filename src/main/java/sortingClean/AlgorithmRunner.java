@@ -42,18 +42,5 @@ public class AlgorithmRunner {
        randomAlgorithm2.sort(intsClone);
     }
 
-    private static SortingAlgorithm<Integer> makeRandomSortingAlgorithm(){
-        Random random = new Random(System.currentTimeMillis());
-        SortingAlgorithm<Integer> sortAlg= null;
-        switch (random.nextInt(4)){
-            case 0: sortAlg = new QuickSort();
-                break;
-            case 1: sortAlg = new MergeSort();
-                break;
-            case 2: sortAlg = new BubbleSort();
-                break;
-            case 3: sortAlg = new InsertionSort();
-        }
-        return sortAlg;
-    }
+
 }
