@@ -6,6 +6,7 @@ import org.jboss.weld.environment.se.WeldContainer;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
+import java.util.Random;
 
 // TODO: Add java classes (in separate files for annotations and aspects)
 public class MainApp {
@@ -25,5 +26,24 @@ public class MainApp {
     @Produces
     public @Named("Lc")  SortingAlgorithm<Integer> GetQuickSort(){
         return container.select(QuickSort.class).get();
+    }
+
+    @Produces
+    public @Named("Rc")  SortingAlgorithm<Integer> GetRandomSort(){
+        return makeRandomSortingAlgorithm();
+    }
+    private static SortingAlgorithm<Integer> makeRandomSortingAlgorithm(){
+        Random random = new Random(System.currentTimeMillis());
+        SortingAlgorithm<Integer> sortAlg= null;
+        switch (random.nextInt(4)){
+            case 0: sortAlg = new QuickSort();
+                break;
+            case 1: sortAlg = new MergeSort();
+                break;
+            case 2: sortAlg = new BubbleSort();
+                break;
+            case 3: sortAlg = new InsertionSort();
+        }
+        return sortAlg;
     }
 }

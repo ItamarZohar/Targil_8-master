@@ -14,7 +14,9 @@ public class AlgorithmRunner {
     @Named("Lc")
     SortingAlgorithm<Integer> nlognAlgorithm;
 
-   // SortingAlgorithm<Integer> randomAlgorithm1 = makeRandomSortingAlgorithm();
+    @Inject
+    @Named("Rc")
+    SortingAlgorithm<Integer> randomAlgorithm1;
   //  SortingAlgorithm<Integer> randomAlgorithm2 = makeRandomSortingAlgorithm();
 
 
@@ -32,7 +34,7 @@ public class AlgorithmRunner {
         intsClone = ints.clone();
         nlognAlgorithm.sort(intsClone);
         intsClone = ints.clone();
-      //  randomAlgorithm1.sort(intsClone);
+        randomAlgorithm1.sort(intsClone);
         intsClone = ints.clone();
        // randomAlgorithm2.sort(intsClone);
     }
