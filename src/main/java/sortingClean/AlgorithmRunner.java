@@ -17,7 +17,10 @@ public class AlgorithmRunner {
     @Inject
     @Named("Rc")
     SortingAlgorithm<Integer> randomAlgorithm1;
-  //  SortingAlgorithm<Integer> randomAlgorithm2 = makeRandomSortingAlgorithm();
+
+    @Inject
+    @Named("Rc")
+   SortingAlgorithm<Integer> randomAlgorithm2;
 
 
 
@@ -36,7 +39,7 @@ public class AlgorithmRunner {
         intsClone = ints.clone();
         randomAlgorithm1.sort(intsClone);
         intsClone = ints.clone();
-       // randomAlgorithm2.sort(intsClone);
+       randomAlgorithm2.sort(intsClone);
     }
 
     private static SortingAlgorithm<Integer> makeRandomSortingAlgorithm(){
