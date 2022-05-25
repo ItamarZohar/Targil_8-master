@@ -36,13 +36,13 @@ public class MainApp {
         Random random = new Random(System.currentTimeMillis());
         SortingAlgorithm<Integer> sortAlg= null;
         switch (random.nextInt(4)){
-            case 0: sortAlg = new QuickSort();
+            case 0: sortAlg = container.select(QuickSort.class).get();
                 break;
-            case 1: sortAlg = new MergeSort();
+            case 1: sortAlg = container.select(MergeSort.class).get();
                 break;
-            case 2: sortAlg = new BubbleSort();
+            case 2: sortAlg = container.select(BubbleSort.class).get();
                 break;
-            case 3: sortAlg = new InsertionSort();
+            case 3: sortAlg = container.select(InsertionSort.class).get();
         }
         return sortAlg;
     }
